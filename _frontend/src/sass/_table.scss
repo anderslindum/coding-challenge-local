@@ -1,0 +1,18 @@
+/* base table row animation support */
+.tr-flip {
+    will-change: transform;
+}
+
+/* instant inverted state (no animation) */
+.tr-flip--invert {
+    transform: translateY(var(--flip-delta-y));
+    transition: transform 0s;
+}
+
+/* animated state */
+.tr-flip--animate {
+    transform: translateY(0);
+    transition: transform 850ms $bezier;
+
+
+}
