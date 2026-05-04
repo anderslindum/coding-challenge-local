@@ -1,4 +1,25 @@
-/* base table row animation support */
+/* price flash animation */
+@keyframes price-flash {
+    0% {
+        color: inherit;
+    }
+
+    20% {
+        color: $success;
+        transform: scale(1.15);
+    }
+
+    100% {
+        color: inherit;
+        transform: scale(1);
+    }
+}
+
+.price-flash {
+    display: inline-block;
+    animation: price-flash 600ms $bezier-spring;
+}
+
 .tr-flip {
     will-change: transform;
 }
@@ -12,7 +33,26 @@
 /* animated state */
 .tr-flip--animate {
     transform: translateY(0);
-    transition: transform 850ms $bezier;
+    transition: transform var(--flip-duration, 850ms) $bezier-spring;
+}
 
+/* newly added row */
+@keyframes tr-new-enter {
+    0% {
+        transform: translateY(200%);
+        background-color: rgba($success, 0.25);
+    }
 
+    60% {
+        background-color: rgba($success, 0.25);
+    }
+
+    100% {
+        transform: translateY(0);
+        background-color: rgba($success, 0);
+    }
+}
+
+.tr-new {
+    animation: tr-new-enter 1000ms $bezier-spring forwards;
 }

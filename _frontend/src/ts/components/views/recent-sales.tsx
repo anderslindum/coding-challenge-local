@@ -10,12 +10,6 @@ export interface RecentSalesViewProps {
 }
 
 export const RecentSalesView: React.FC<RecentSalesViewProps> = ({ recentSales, visible }) => {
-    useEffect(() => {
-        const tbody = document.getElementById('recent-sales')?.querySelector('tbody')
-        if (tbody) {
-        }
-    })
-
     return (
         <div className={`${visible ? 'block' : 'hidden'}`}>
             <Card>

@@ -6,10 +6,7 @@ interface ChildrenProp {
 }
 
 export const Table = ({ children, id, title }: ChildrenProp & { id?: string; title: string }) => (
-    <table
-        title={title}
-        id={id}
-        className={classNames('w-full table-fixed bg-white rounded-sm overflow-x-auto overflow-y-hidden thin-scrollbar')}>
+    <table title={title} id={id} className={classNames('w-full table-fixed bg-white rounded-sm overflow-x-auto  thin-scrollbar')}>
         {children}
     </table>
 )

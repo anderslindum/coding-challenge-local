@@ -31,8 +31,9 @@ export const DashBoardView = () => {
             let user = await store.getUser(e.userId)
             let product = await store.getProduct(e.productId)
             const totalPrice = product ? product.unitPrice * e.duration : 0
+            
             if (user) {
-                updateSellers({ id: e.userId, name: user.name, totalPrice: totalPrice })
+                updateSellers({ id: e.userId.toString(), name: user.name, totalPrice: totalPrice })
             }
             if (product && user) {
                 const now = Date.now()

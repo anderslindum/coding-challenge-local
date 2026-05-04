@@ -2,7 +2,7 @@ import React from 'react'
 import { Users } from '../services/_private/db'
 
 export interface Seller {
-    id: number
+    id: string
     name: string
     totalPrice: number
 }
@@ -27,7 +27,9 @@ const SalesContext = React.createContext<SalesContextProps | undefined>(undefine
 
 export const SalesContextProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     // Initialize sellers with all users from the database, each with totalPrice 0
-    const [sellers, setSellers] = React.useState<Seller[]>(() => Users.map((user) => ({ id: user.id, name: user.name, totalPrice: 0 })))
+    const [sellers, setSellers] = React.useState<Seller[]>(() =>
+        Users.map((user) => ({ id: user.id.toString(), name: user.name, totalPrice: 0 })),
+    )
     const [recentSales, setRecentSales] = React.useState<Sale[]>([])
 
     const updateSellers = (newSeller: Seller) => {
@@ -35,7 +37,6 @@ export const SalesContextProvider: React.FC<{ children: React.ReactNode }> = ({ 
             return prev.map((seller) =>
                 seller.id === newSeller.id ? { ...seller, totalPrice: seller.totalPrice + newSeller.totalPrice } : seller,
             )
-            // .sort((a, b) => b.totalPrice - a.totalPrice)
         })
     }
 
