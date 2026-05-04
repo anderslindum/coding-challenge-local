@@ -31,7 +31,7 @@ export const SplashModal: React.FC<SplashModalProps> = ({ sale }) => {
                 <div className='splash-modal__details'>
                     <h2 className='splash-modal__details-title'>{sale.name}</h2>
                     <div className='splash-modal__details-item'>
-                        <div className='splash-modal__details-item-label'>{sale.productName}</div>
+                        <div className='splash-modal__details-item-label'>{sale.productName}:</div>
                         <div className='splash-modal__details-item-value'>{formatPrice(sale.totalPrice)}</div>
                     </div>
                 </div>
