@@ -30,24 +30,9 @@ export const SplashModal: React.FC<SplashModalProps> = ({ sale }) => {
                 </div>
                 <div className='splash-modal__details'>
                     <h2 className='splash-modal__details-title'>{sale.name}</h2>
-                    <dl className='splash-modal__details-list'>
-                        <div className='splash-modal__details-item'>
-                            <dt className='splash-modal__details-item-label'>Product Name:</dt>
-                            <dd className='splash-modal__details-item-value'>{sale.productName}</dd>
-                        </div>
-                        <div className='splash-modal__details-item'>
-                            <dt className='splash-modal__details-item-label'>Total Price:</dt>
-                            <dd className='splash-modal__details-item-value'>{formatPrice(sale.totalPrice)}</dd>
-                        </div>
-                    </dl>
-
-                    <div className='mt-2 flex'>
-                        <span className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2'>
-                            New Sale!
-                        </span>
-                        <span className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2'>
-                            {new Date(sale.timestamp).toLocaleString()}
-                        </span>
+                    <div className='splash-modal__details-item'>
+                        <div className='splash-modal__details-item-label'>{sale.productName}</div>
+                        <div className='splash-modal__details-item-value'>{formatPrice(sale.totalPrice)}</div>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,9 @@
 @import "variables";
 
 .splash-modal {
+    position: fixed;
+    top: 0.5rem;
+    right: 0.5rem;
     margin-top: 1rem;
     border-radius: 0.5rem;
     width: fit-content;
@@ -8,11 +11,9 @@
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
     transition: all 0.3s;
     background: #fff;
-    position: relative;
 
     &__content {
         display: flex;
-        gap: 1rem;
 
         &-icon {
             background-color: $green;
@@ -20,25 +21,23 @@
             justify-content: center;
             align-items: center;
             font-size: 2rem;
-            padding: 1.5rem 2.5rem;
+            padding: 1rem 2.5rem;
         }
     }
 
     &__details {
         display: flex;
         flex-direction: column;
-        gap: 0.5rem;
-        padding: 1.5rem 3rem 1rem 1.5rem;
+        padding: 1rem 3rem 1rem 1rem;
 
         &-title {
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: 600;
         }
 
         &-list {
             display: flex;
             flex-direction: column;
-            gap: 0.25rem;
         }
 
         &-item {
