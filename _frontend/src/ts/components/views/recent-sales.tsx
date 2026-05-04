@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import formatPrice from '../../helpers/format-price'
 import Table from '../widgets/table'
 import { Card } from '../widgets/card'

@@ -31,7 +31,7 @@ export const DashBoardView = () => {
             let user = await store.getUser(e.userId)
             let product = await store.getProduct(e.productId)
             const totalPrice = product ? product.unitPrice * e.duration : 0
-            
+
             if (user) {
                 updateSellers({ id: e.userId.toString(), name: user.name, totalPrice: totalPrice })
             }
@@ -77,7 +77,7 @@ export const DashBoardView = () => {
             <div className='flex-auto p-5'>
                 <Header />
                 <RecentSalesView recentSales={recentSales} visible={mode === 'recent'} />
-                <TopSalesView sellers={sellers} visible={mode === 'top'} />
+                <TopSalesView topSize={10} sellers={sellers} visible={mode === 'top'} />
 
                 {currentSplash && <SplashModal sale={currentSplash} />}
             </div>
